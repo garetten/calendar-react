@@ -1,0 +1,30 @@
+.header{
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    &__newEvent{
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
+    &__month{
+        display: flex;
+    }
+}
+
+.change__month{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    
+}
+
+
+.data__picker{
+    position: relative;
+    &__calendar{
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,30 @@
+.change__month{
+    
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.small__calendar{
+    position: absolute;
+    background-color: #fff;
+    padding: 10px;
+    bottom: 0;
+    left:0;
+    transform: translate(-100%,100%);
+    border: 1px solid black;
+    border-radius: 20px;
+    z-index: 3;
+    &__container{
+        max-width: 400px;
+        background-color: #fff;
+        
+    }
+    &__month{
+        display: grid;
+        grid-template-columns: repeat(7,1fr);
+        grid-template-rows: repeat(5,1frpx);
+        text-align: center;
+        
+    }
+}
