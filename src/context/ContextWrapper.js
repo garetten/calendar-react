@@ -23,7 +23,7 @@ function initEventsValue(){
 }
 export default function ContextWrapper(props) {
     const [date,setDate] = useState(new Date());
-    const [showEventModal,setShowEventModal] = useState(true);
+    const [showEventModal,setShowEventModal] = useState(false);
     const [daySelected,setDaySelected] = useState(new Date());
     const [selectedEvent,setSelectedEvent] = useState(null);
 

@@ -8,7 +8,7 @@ export default function Day({day}) {
 
 const [dayEvents,setDayEvents] = useState([]);
 
-  const nowDay = new Date().toLocaleDateString('en-Us',{weekday:'short', day:'numeric'});
+  const nowDay = new Date().toLocaleDateString('en-Us',{year: 'numeric',weekday:'short', day:'numeric'});
   const {setDaySelected,setShowEventModal,daySelected,savedEvents,setSelectedEvent} 
   = useContext(GlobalContext);
 
@@ -16,16 +16,16 @@ const [dayEvents,setDayEvents] = useState([]);
   useEffect(()=>{
       const events = savedEvents.filter((ev)=>{
         ev.day = new Date(ev.day);
-        return ev.day?.toLocaleDateString('en-Us',{weekday:'short', day:'numeric'}) === day.toLocaleDateString('en-Us',{weekday:'short', day:'numeric'})
+        return ev.day?.toLocaleDateString('en-Us',{year: 'numeric',month: 'long',weekday:'short', day:'numeric'}) === day.toLocaleDateString('en-Us',{year: 'numeric',month: 'long',weekday:'short', day:'numeric'})
       })
       setDayEvents(events ? events : [])
   },[savedEvents,day])
 
   function isSelectedDay(){
-    return daySelected.toLocaleDateString('en-Us',{weekday:'short', day:'numeric'}) === day.toLocaleDateString('en-Us',{weekday:'short', day:'numeric'}) && 'selected__day'
+    return daySelected.toLocaleDateString('en-Us',{month: 'long',year: 'numeric',weekday:'short', day:'numeric'}) === day.toLocaleDateString('en-Us',{month: 'long',year: 'numeric',weekday:'short', day:'numeric'}) && 'selected__day'
   }
   function isCurrentDay(){
-    return nowDay === day.toLocaleDateString('en-Us',{weekday:'short', day:'numeric'}) && 'today'
+    return nowDay === day.toLocaleDateString('en-Us',{year: 'numeric',weekday:'short', day:'numeric'}) && 'today'
   }
   return (
     <div className={`day ${isSelectedDay()}`} onClick={()=>{setDaySelected(day); setShowEventModal(true) }}>

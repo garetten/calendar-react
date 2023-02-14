@@ -24,6 +24,7 @@ export default function EventModal() {
     setShowEventModal(false);
   }
   function handleSubmit(e){
+
     e.preventDefault();
     const calendarEvent = {
       title,
@@ -32,6 +33,7 @@ export default function EventModal() {
       id: Date.now()
     }
     if(selectedEvent){
+      calendarEvent.id = selectedEvent.id
       dispatchEvent({type:"update",payload:calendarEvent});
       setSelectedEvent(null);
       setShowEventModal(false);
